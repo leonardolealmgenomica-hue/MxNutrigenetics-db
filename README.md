@@ -1,4 +1,5 @@
 # Mexican Genome Nutrigenetics SNP Database
+### Nutrigenetic Variants and Dietary Interventions for the Mexican Population
 
 A curated database of Single Nucleotide Polymorphisms (SNPs) specifically relevant to the Mexican population, focusing on nutrigenetics, metabolic health, and disease prevention.
 
