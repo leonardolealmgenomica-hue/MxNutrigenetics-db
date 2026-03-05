@@ -860,7 +860,7 @@ SNP_DATABASE = [
 
 
 # ── Índice por rs_id ──────────────────────────────────────────────────────────
-SNP_INDEX = {snp["rs_id"].lower(): snp for snp in SNP_DATABASE}
+SNP_INDEX = {str(snp["rs_id"]).lower(): snp for snp in SNP_DATABASE}
 
 
 def get_snp(rs_id: str) -> dict | None:
@@ -870,17 +870,17 @@ def get_snp(rs_id: str) -> dict | None:
 
 def list_areas() -> list[str]:
     """Lista todas las áreas metabólicas cubiertas."""
-    return sorted(set(s["area"] for s in SNP_DATABASE))
+    return sorted(list(set(str(s["area"]) for s in SNP_DATABASE)))
 
 
 def list_snps_by_area(area: str) -> list[dict]:
     """Retorna todos los SNPs de un área metabólica."""
-    return [s for s in SNP_DATABASE if s["area"].lower() == area.lower()]
+    return [s for s in SNP_DATABASE if str(s["area"]).lower() == area.lower()]
 
 
 def list_all_rs_ids() -> list[str]:
     """Lista todos los rs IDs en la base de datos."""
-    return [s["rs_id"] for s in SNP_DATABASE]
+    return [str(s["rs_id"]) for s in SNP_DATABASE]
 
 
 # ── Test ─────────────────────────────────────────────────────────────────────
